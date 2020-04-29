@@ -1,4 +1,4 @@
-var eventsModule = (function(){
+var eventsModule = (function(dModule,cModule,uModule,wModule){
     var addEventListeners = function(){
         // character typing error listener 
         // click on download button event listener 
@@ -11,4 +11,4 @@ var eventsModule = (function(){
         }
     };
 
-})
+})(dataModule,certificateModule,UIModule,wordsModule);
