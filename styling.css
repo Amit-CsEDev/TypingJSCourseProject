@@ -1,0 +1,8 @@
+/* body element */
+body{
+    font-family : 'Open Sans', sans-serif;
+    background : url("Images/background-5060836_960_720.jpeg") no-repeat center center;
+    background-attachment : fixed;
+    background-size : cover;
+    color : white;
+}
