@@ -55,8 +55,10 @@ var dataModule = (function(){
         calculateAccuracy : function(){}, // calculates accuracy and accuracyChange and updates them in appData
 
         // test words
+        // fills words.testWords
+        fillListOfTestWords : function(textNumber){
 
-        fillListOfTestWords : function(textNumber){}, // fills words.testWords
+        },
 
         getListOfTestWords : function(){}, // get list of test words : words.testWords 
 
