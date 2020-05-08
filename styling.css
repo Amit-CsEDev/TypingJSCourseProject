@@ -45,3 +45,39 @@ body{
     padding : 10px;
     color : rgb(1,226,182);
 }
+
+.keyboard{
+    min-height : 200px;
+    max-height : 300px;
+    background:  url("images/keyboard-5017973_960_720.jpeg") no-repeat center center;
+    background-size : contain;
+    margin-top : 10px;
+}
+
+.restart{
+    margin-top : 20px;
+    opacity : 0.5;
+}
+
+.btn-primary{
+    background : rgba(236, 34, 202, 0.5);
+}
+
+.btn-primary:focus,.btn-primary:active,.btn-primary:hover{
+    background : rgba(236, 34, 202, 0.8);
+}
+
+.scoreDown , .scoreUp{
+    border-radius : 5px;
+    padding : 5px;
+    font-size : 12px;
+}
+
+.scoreDown{
+    background : mediumvioletred;
+}
+
+.scoreUp{
+    background : greenyellow;
+    color : black;
+}
