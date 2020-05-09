@@ -56,8 +56,12 @@ var dataModule = (function(){
 
         // test words
         // fills words.testWords
-        fillListOfTestWords : function(textNumber){
-
+        fillListOfTestWords : function(textNumber,words){
+            var result = words.split(" ");
+            if(textNumber === 0){
+                
+            }
+            appData.words.testWords = result; 
         },
 
         getListOfTestWords : function(){}, // get list of test words : words.testWords 

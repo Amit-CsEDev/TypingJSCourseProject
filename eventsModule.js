@@ -7,9 +7,11 @@ var eventsModule = (function(dModule,cModule,uModule,wModule){
     return {
         // init function, initializes the test before start 
         init : function(duration,textNumber){
-
                 // fill the list of test words : data module
-                dModule.fillListOfTestWords(textNumber);
+
+                var words = wModule.getWords(textNumber);
+
+                dModule.fillListOfTestWords(textNumber,words);
 
                 // fill the list of test words : UI Module  
 
