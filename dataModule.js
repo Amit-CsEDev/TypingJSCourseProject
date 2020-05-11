@@ -1,5 +1,11 @@
 var dataModule = (function(){
 
+    // shuffle function
+
+    // capitalize random function
+
+    // add random punctuation function
+
     var appData = {
         indicators : {
             testStarted:false,testEnded:false,totalTestTime:0,timeLeft:0
@@ -56,10 +62,14 @@ var dataModule = (function(){
 
         // test words
         // fills words.testWords
-        fillListOfTestWords : function(textNumber,words){
+        fillListOfTestWords : function(textNumber,words){ 
             var result = words.split(" ");
             if(textNumber === 0){
-                
+                 //shuffle words    
+
+                 // capitalize random strings
+
+                 // add random punctuation
             }
             appData.words.testWords = result; 
         },
