@@ -1,9 +1,28 @@
 var dataModule = (function(){
 
     // shuffle function
+    var shuffle = function(array){
+        var newArray = [];   
+        var randomIndex;
+        var randomElement;
+        while(array.length > 0){
+            // take a random element from an array and add it to a new array
+            randomIndex = Math.floor(Math.random() * array.length);
+            randomElement = array[randomIndex];
+            newArray.push(randomElement);
+            // delete randomElement from array
+            array.splice(randomIndex,1);
+        }
+        return newArray;
+    };
 
     // capitalize random function
-
+    String.prototype.capitalize = function(){
+        var newString = '';
+        var firstCharCap = this.charAt(0).toUpperCase();
+        var remainingChar = this.slice(1);
+        newString = firstCharCap + remainingChar;
+    }
     // add random punctuation function
 
     var appData = {
