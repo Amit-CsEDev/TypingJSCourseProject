@@ -16,13 +16,25 @@ var dataModule = (function(){
         return newArray;
     };
 
-    // capitalize random function
+    // capitalize first letter of a strinf 
     String.prototype.capitalize = function(){
         var newString = '';
         var firstCharCap = this.charAt(0).toUpperCase();
         var remainingChar = this.slice(1);
         newString = firstCharCap + remainingChar;
+        return newString;
     }
+
+    // capitalize random function
+    var capitalizeRandom = function(arrayOfStrings){
+        return arrayOfStrings.map(function(currentWord){
+            var x = Math.floor(4 * Math.random());
+            // chances of x == 3 is of 25 % so hence we match x with 3 and in the cases of matching we return 
+            // a capitalize word
+            return (x === 3)? currentWord.capitalize() : currentWord;
+        })
+    };    
+
     // add random punctuation function
 
     var appData = {
