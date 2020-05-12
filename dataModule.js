@@ -1,5 +1,5 @@
 var dataModule = (function(){
-
+    var lineReturn = '|';
     // shuffle function
     var shuffle = function(array){
         var newArray = [];   
@@ -36,6 +36,15 @@ var dataModule = (function(){
     };    
 
     // add random punctuation function
+    var addRandomPunctuation = function(arrayOfStrings){
+        return arrayOfStrings.map(function(currentWord){
+            var randomPunctuation;
+            var items = [lineReturn,'?',',',',',',',',','.','.','!','','','','','','','','','','','','',''];
+            var randomIndex = Math.floor(Math.random() * items.length);
+            randomPunctuation = items[randomIndex];
+            return currentWord + randomPunctuation;
+        });
+    };
 
     var appData = {
         indicators : {
@@ -97,10 +106,11 @@ var dataModule = (function(){
             var result = words.split(" ");
             if(textNumber === 0){
                  //shuffle words    
-
+                 result = shuffle(result);
                  // capitalize random strings
-
+                result = capitalizeRandom(result);
                  // add random punctuation
+                result = randomPunctuation(result);
             }
             appData.words.testWords = result; 
         },
