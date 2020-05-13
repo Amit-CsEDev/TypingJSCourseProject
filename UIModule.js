@@ -32,7 +32,9 @@ var UIModule = (function(){
 
         // test words
 
-        fillContent : function(){},
+        fillContent : function(array){
+            
+        },
         formatWord : function(wordObject, wordHTML){},
         setActiveword : function(index){},
         deactivateCurrentWord : function(){},

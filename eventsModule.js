@@ -14,7 +14,8 @@ var eventsModule = (function(dModule,cModule,uModule,wModule){
                 dModule.fillListOfTestWords(textNumber,words);
 
                 // fill the list of test words : UI Module  
-
+                var testWords = dModule.getListOfTestWords(testWords);
+                uModule.fillContent()
                 // set the total test time 
 
                 // update the time left : data Module

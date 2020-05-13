@@ -114,8 +114,10 @@ var dataModule = (function(){
             }
             appData.words.testWords = result; 
         },
-
-        getListOfTestWords : function(){}, // get list of test words : words.testWords 
+        // get list of test words : words.testWords 
+        getListOfTestWords : function(){
+            return appData.words.testWords;
+        }, 
 
         moveToNewWord : function(){}, // increments the currentWordIndex - updates the current word (appData.words.currentWord)
      // by creating a new instance of the word class - updates numOfCorrectWords,numOfCorrectCharacters and 
