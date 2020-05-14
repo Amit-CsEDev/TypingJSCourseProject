@@ -16,6 +16,27 @@ var UIModule = (function(){
         return string.split('');
     };
 
+    var addSpace = function(array){
+        array.push(' ');
+        return array;
+    };
+
+    var addSpanTags = function(array){
+        return array.map(function(currentCharacter){
+            return '<span>' + currentCharacter + '</span>';
+        });
+    };
+
+    var addWordSpanTags = function(array){
+        array.push('</span>');
+        array.unshift('<span>');
+        return array;
+    };
+
+    var joinEachWord = function(array){
+        return array.join('');
+    };
+
     return {
         // get DOM elements 
         getDOMElements(){},
@@ -39,6 +60,9 @@ var UIModule = (function(){
         fillContent : function(array,lineReturn){
             var content = array.map(splitArray);
             content = content.map(addSpace);
+            content = content.map(addSpanTags);
+            content = content.map(addWordSpanTags);
+            content = content.map(joinEachWord);
         },
         formatWord : function(wordObject, wordHTML){},
         setActiveword : function(index){},
