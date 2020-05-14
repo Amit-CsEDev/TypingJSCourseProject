@@ -125,6 +125,10 @@ var dataModule = (function(){
      
      updateCurrentWord : function(value){}, // updates current word using user input
 
+        getLineReturn(){
+            return lineReturn;
+        }
+
     }
     
 })();

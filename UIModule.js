@@ -12,6 +12,10 @@ var UIModule = (function(){
         modal
     };
 
+    var splitArray = function(string){
+        return string.split('');
+    };
+
     return {
         // get DOM elements 
         getDOMElements(){},
@@ -32,8 +36,9 @@ var UIModule = (function(){
 
         // test words
 
-        fillContent : function(array){
-            
+        fillContent : function(array,lineReturn){
+            var content = array.map(splitArray);
+            content = content.map(addSpace);
         },
         formatWord : function(wordObject, wordHTML){},
         setActiveword : function(index){},
