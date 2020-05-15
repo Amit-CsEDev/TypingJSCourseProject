@@ -4,12 +4,19 @@ var UIModule = (function(){
 
     var DOMElements = {
         // indicators - test control
-        timeLeft,//HTML element displaying time Left
+        timeLeft:'',//HTML element displaying time Left
         //test results 
-        wpm,wpmChange,cpm,cpmChange,accuracy,accuracyChange, // user input
-        textInput,nameInput, // test words 
-        content,activeWord, // modal 
-        modal
+        wpm:'',
+        wpmChange:'',
+        cpm:'',
+        cpmChange:'',
+        accuracy:'',
+        accuracyChange:'', // user input
+        textInput:'',
+        nameInput:'', // test words 
+        content:document.getElementById('content'),
+        activeWord:'', // modal 
+        modal:''    
     };
 
     var splitArray = function(string){
@@ -63,6 +70,11 @@ var UIModule = (function(){
             content = content.map(addSpanTags);
             content = content.map(addWordSpanTags);
             content = content.map(joinEachWord);
+            content = content.join('');
+            content = content.replace('<span>|</span>','<span>&crarr;</span>');
+            content = content.split('<span></span>').join('<span>&crarr;</span>');    
+            content = content.split('<span>'+lineReturn+ '</span>').join('<span>&crarr;</span>');    
+            DOMElements.content.innerHTML = content;
         },
         formatWord : function(wordObject, wordHTML){},
         setActiveword : function(index){},
