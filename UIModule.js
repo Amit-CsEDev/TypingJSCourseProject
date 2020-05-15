@@ -73,7 +73,7 @@ var UIModule = (function(){
             content = content.join('');
             content = content.replace('<span>|</span>','<span>&crarr;</span>');
             content = content.split('<span></span>').join('<span>&crarr;</span>');    
-            content = content.split('<span>'+lineReturn+ '</span>').join('<span>&crarr;</span>');    
+            content = content.split('<span>'+ lineReturn +'</span>').join('<span>&crarr;</span>');    
             DOMElements.content.innerHTML = content;
         },
         formatWord : function(wordObject, wordHTML){},
