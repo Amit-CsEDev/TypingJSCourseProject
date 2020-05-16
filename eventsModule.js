@@ -26,12 +26,15 @@ var eventsModule = (function(dModule,cModule,uModule,wModule){
                 uModule.updateTimeLeft(timeLeft);
                 // move to a new word : data Module
                 dModule.moveToNewWord();
-                
                 // set the active word : UI Module
-
+                var index = dModule.getCurrentWordIndex();
+                uModule.setActiveword(index);
                 // format the active word : UI Module   
+                var currentWord = dModule.getCurrentWord();
+                uModule.formatWord(currentWord);
 
                 // focus on text input : UI Module
+                uModule.inputfocus();
 
                 // add event listener  
 

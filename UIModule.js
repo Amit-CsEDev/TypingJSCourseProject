@@ -56,7 +56,9 @@ var UIModule = (function(){
         fillModal : function(){},
         showModal : function(){},
         // user input
-        inputfocus : function(){},
+        inputfocus : function(){
+            DOMElements.textInput.focus();
+        },
         isNameEmpty : function(){},
         flagNameInput : function(){},
         spacePressed : function(){},
@@ -78,8 +80,18 @@ var UIModule = (function(){
             content = content.split('<span>'+ lineReturn +'</span>').join('<span>&crarr;</span>');    
             DOMElements.content.innerHTML = content;
         },
-        formatWord : function(wordObject, wordHTML){},
-        setActiveword : function(index){},
+        formatWord : function(wordObject){
+            var activeWord = DOMElements.activeWord;
+
+            //highlight current word
+            activeWord.className = 'activeWord';
+
+            //format individual character 
+
+        },
+        setActiveword : function(index){
+            DOMElements.activeWord = DOMElements.content.children[index];
+        },
         deactivateCurrentWord : function(){},
         scroll : function(){}
     }

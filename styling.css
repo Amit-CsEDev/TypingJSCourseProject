@@ -73,6 +73,12 @@ body{
     font-size : 12px;
 }
 
+
+.activeWord{
+    background-color:  greenyellow;
+    border-radius : 5px;
+}
+
 .scoreDown{
     background : mediumvioletred;
 }
