@@ -4,19 +4,19 @@ var UIModule = (function(){
 
     var DOMElements = {
         // indicators - test control
-        timeLeft:'',//HTML element displaying time Left
+        timeLeft: document.getElementById('timeLeft'),//HTML element displaying time Left
         //test results 
-        wpm:'',
-        wpmChange:'',
-        cpm:'',
-        cpmChange:'',
-        accuracy:'',
-        accuracyChange:'', // user input
-        textInput:'',
-        nameInput:'', // test words 
+        wpm: document.getElementById('wpm'),
+        wpmChange: document.getElementById('wpmChange'),
+        cpm: document.getElementById('cpm'),
+        cpmChange: document.getElementById('cpmChange'),
+        accuracy: document.getElementById('accuracy'),
+        accuracyChange: document.getElementById('accuracyChange'), // user input
+        textInput: document.querySelector('#input'),
+        nameInput: document.querySelector('.form-group'), // test words 
         content:document.getElementById('content'),
         activeWord:'', // modal 
-        modal:''    
+        modal:$('#myModal')    
     };
 
     var splitArray = function(string){
@@ -48,7 +48,9 @@ var UIModule = (function(){
         // get DOM elements 
         getDOMElements(){},
         // Indicators - Test Control 
-        updateTimeLeft : function(){},
+        updateTimeLeft : function(x){
+            DOMElements.timeLeft.innerHTML = x;
+        },
         // results
         updateResults : function(){},
         fillModal : function(){},

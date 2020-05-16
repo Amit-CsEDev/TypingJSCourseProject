@@ -15,14 +15,15 @@ var eventsModule = (function(dModule,cModule,uModule,wModule){
 
                 // fill the list of test words : UI Module  
                 var LineReturn = dModule.getLineReturn();
-                var testWords = dModule.getListOfTestWords(testWords , lineReturn);
-                uModule.fillContent()
+                var testWords = dModule.getListOfTestWords();
+                uModule.fillContent(testWords , lineReturn);
                 // set the total test time 
-
+                dModule.setTestTime(duration);
                 // update the time left : data Module
-                
-                // update time left : UI Module 
-
+                dModule.initializeTimeLeft();
+                // update time left : UI Module
+                var timeLeft = dModule.getTimeLeft(); 
+                uModule.updateTimeLeft(timeLeft);
                 // move to a new word : data Module
 
                 // set the active word : UI Module
