@@ -3,7 +3,11 @@ var eventsModule = (function(dModule,cModule,uModule,wModule){
         // character typing error listener 
 
         // click on download button event listener 
-        uModule.getDOMElements().textInput.addEventListeners('',function(event){
+        uModule.getDOMElements().textInput.addEventListeners('keydown',function(event){
+            //if the test ended, do nothing
+
+            //if the test has not started yet,start the test and countdown
+
             
         });
         // click on restart button event listener  done through location.reload function in html page in restart button
