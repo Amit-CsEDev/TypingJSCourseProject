@@ -82,8 +82,10 @@ var dataModule = (function(){
         };
     };
 
-    // update method 
-    word.prototype.update = function(value){};
+    // update method : updates the word using the word typed by the user 
+    word.prototype.update = function(value){
+        
+    };
 
     return {
         // indicators - test control
@@ -108,8 +110,10 @@ var dataModule = (function(){
         reduceTime : function(){}, // reduces the time by one second
 
         timeLeft : function(){}, // checks if there is time left to continue the test 
-
-        testEnded : function(){}, // checks if the test has already ended 
+        // checks if the test has already ended 
+        testEnded : function(){
+            return appData.indicators.testEnded
+        }, 
 
         testStarted : function(){}, // checks if the test has started
 
@@ -157,22 +161,24 @@ var dataModule = (function(){
             appData.words.currentWord = newWord;
         }, 
       // get the current word index
-      getCurrentWordIndex(){
+    getCurrentWordIndex(){
         return appData.words.currentWordIndex;
-      },
+    },
 
       //get current word
-      getCurrentWord(){
-          var currentWord = appData.words.currentWord;
-          return {
-              value : {
-                  correct : currentWord.value.correct,
-                  user : currentWord.value.user
-              }
-          };
-      },
-
-     updateCurrentWord : function(value){}, // updates current word using user input
+    getCurrentWord(){
+        var currentWord = appData.words.currentWord;
+        return {
+            value : {
+                correct : currentWord.value.correct,
+                user : currentWord.value.user
+            }
+        };
+    },
+    // updates current word using user input
+    updateCurrentWord : function(value){
+        appData.words.currentWord.update(value);
+    }, 
 
         getLineReturn(){
             return lineReturn;
