@@ -84,7 +84,22 @@ var dataModule = (function(){
 
     // update method : updates the word using the word typed by the user 
     word.prototype.update = function(value){
-        
+        //update the user input
+        this.value.user = value;
+
+        //update the words status (correct or not)
+        this.value.isCorrect = (this.value.correct == this.value.user);
+
+        //update user characters
+        this.characters.user = this.value.user.split('');
+
+        //calculate the number of correct characters
+        var x = 0;
+        var charCallback = function(currentElement,index){
+            x +=
+        }
+        this.characters.correct.foreach(charCallback);
+
     };
 
     return {
