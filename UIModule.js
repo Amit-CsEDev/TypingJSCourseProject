@@ -48,7 +48,7 @@ var UIModule = (function(){
         // get DOM elements 
         getDOMElements : function(){
             return{
-                textInput :  true// test line
+                textInput :  DOMElements.textInput
             };
         },
         // Indicators - Test Control 
@@ -69,6 +69,7 @@ var UIModule = (function(){
         enterPressed : function(){},
         emptyInput : function(){},
         getTypedWord : function(){
+            console.log(DOMElements.textInput.Value);
             return DOMElements.textInput.Value;
         },
 

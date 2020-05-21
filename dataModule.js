@@ -43,7 +43,14 @@ var dataModule = (function(){
             var randomIndex = Math.floor(Math.random() * items.length);
             randomPunctuation = items[randomIndex];
             return currentWord + randomPunctuation;
-        });
+        }
+    );
+    //character call back used to calculate the number of correct characters inside the current word
+    var nbCorrectChar;
+    var charCallback = function(currentElement,index){
+        nbCorrectChar += (currentElement === this.characters.user[index])? 1 : 0;
+    };
+
     };
 
     var appData = {
@@ -94,11 +101,12 @@ var dataModule = (function(){
         this.characters.user = this.value.user.split('');
 
         //calculate the number of correct characters
-        var x = 0;
-        var charCallback = function(currentElement,index){
-            x +=
-        }
-        this.characters.correct.foreach(charCallback);
+        nbCorrectChar = 0;
+        var charCallback2 = charCallback.bind(this);
+
+        this.characters.correct.foreach(charCallback2);
+
+        this.characters.totalCorrect = nbCorrectChar;
 
     };
 
