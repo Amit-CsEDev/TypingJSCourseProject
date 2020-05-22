@@ -18,7 +18,8 @@ var eventsModule = (function(dModule,cModule,uModule,wModule){
             //update current word: data module
             dModule.updateCurrentWord(typedWord);
             //format the active word
-
+            var currentWord = dModule.getCurrentWord();
+            uModule.formatWord(currentWord);
             //check if the user pressed space or enter
             if(uModule.spacePressed() || uModule.enterPressed()){
                 //empty text input

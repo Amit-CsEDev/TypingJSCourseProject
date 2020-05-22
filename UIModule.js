@@ -43,6 +43,10 @@ var UIModule = (function(){
     var joinEachWord = function(array){
         return array.join('');
     };
+    var userValue;
+    var returnCharClass = function(currentCharacter,index){
+        return (index < userValue.length)?(currentCharacter == userValue[index]? 'correctCharacter' : 'wrongCharacter') : '0'
+    };
 
     return {
         // get DOM elements 
@@ -94,6 +98,23 @@ var UIModule = (function(){
             activeWord.className = 'activeWord';
 
             //format individual character 
+            var correctValue = wordObject.value.correct; 
+            userValue = wordObject.value.user;
+
+            //correct value 'word1 '
+            
+            var classes = Array.prototype.map.call(correctValue, returnCharClass);
+
+            //get active word
+            var activeWord = DOMElements.activeWord;
+            //html collection
+            var characters = activeWord.children;
+
+            //add classes to childrem
+            for(var i = 0;i<characters.length;i++){
+                characters[i].removeAttribute('class');
+                characters[i].className = classes[i];
+            }
 
         },
         setActiveword : function(index){

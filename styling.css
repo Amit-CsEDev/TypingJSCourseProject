@@ -92,3 +92,10 @@ body{
     color : black;
 }
 
+.correctCharacter{
+    color : mediumblue;
+}
+
+.wrongCharacter{
+    color : mediumvioletred;
+}
