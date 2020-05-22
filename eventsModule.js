@@ -3,7 +3,7 @@ var eventsModule = (function(dModule,cModule,uModule,wModule){
         // character typing error listener 
 
         // click on download button event listener 
-        uModule.getDOMElements().textInput.addEventListeners('keydown',function(event){
+        uModule.getDOMElements().textInput.addEventListeners('input',function(event){
             //if the test ended, do nothing
             if(dModule.testEnded()){
                 return;
