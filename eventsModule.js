@@ -21,18 +21,21 @@ var eventsModule = (function(dModule,cModule,uModule,wModule){
             var currentWord = dModule.getCurrentWord();
             uModule.formatWord(currentWord);
             //check if the user pressed space or enter
-            if(uModule.spacePressed() || uModule.enterPressed()){
+            if(uModule.spacePressed(event) || uModule.enterPressed()){
                 //empty text input
-
+                uModule.emptyInput();
                 //deactivate current word
-
-                //move to a new word:data module
-
-                //set active word : UI module
-
-                //format the active word : UI module
-
+                uModule.deactivateCurrentWord();
+                // move to a new word : data Module
+                dModule.moveToNewWord();
+                // set the active word : UI Module
+                var index = dModule.getCurrentWordIndex();
+                uModule.setActiveword(index);
+                // format the active word : UI Module   
+                var currentWord = dModule.getCurrentWord();
+                uModule.formatWord(currentWord);
                 //scroll word into middle
+                uModule.scroll();
             }
         });
         // click on restart button event listener  done through location.reload function in html page in restart button
