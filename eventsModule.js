@@ -40,6 +40,10 @@ var eventsModule = (function(dModule,cModule,uModule,wModule){
         });
         // click on restart button event listener  done through location.reload function in html page in restart button
     };
+
+    // scroll active word into middle view on window resize //
+    window.addEventListener('resize',uModule.scroll);
+
     return {
         // init function, initializes the test before start 
         init : function(duration,textNumber){
